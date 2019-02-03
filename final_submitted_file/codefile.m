@@ -111,10 +111,10 @@ atrainimg  = augmentedImageDatastore([224 224 3],trainimg, 'DataAugmentation',im
 
 
 
-options = trainingOptions('sgdm','InitialLearnRate', 0.0015); %% 'name', value pairs value of alpha , the learning rate
+options = trainingOptions('sgdm','InitialLearnRate', 0.001); %% 'name', value pairs value of alpha , the learning rate
 
 
-options = trainingOptions('sgdm','MaxEpochs',24 ,'MiniBatchSize',10,'InitialLearnRate',0.0015, 'Shuffle','every-epoch','Verbose',true,'Plots','training-progress');
+options = trainingOptions('sgdm','MiniBatchSize',10,'InitialLearnRate',0.001, 'Shuffle','every-epoch','Verbose',true,'Plots','training-progress');
 
 trained_net = trainNetwork(atrainimg, lgraph, options) %% trainNetwork takes the lgraph and options  
 
